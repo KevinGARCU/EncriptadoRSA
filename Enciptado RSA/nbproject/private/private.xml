@@ -3,9 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Estudiantes/Documents/EncriptadoRSA-master/Enciptado%20RSA/src/enciptado/rsa/RSA.java</file>
-            <file>file:/C:/Users/Estudiantes/Documents/EncriptadoRSA-master/Enciptado%20RSA/src/enciptado/rsa/Mensaje.java</file>
-            <file>file:/C:/Users/Estudiantes/Documents/EncriptadoRSA-master/Enciptado%20RSA/src/enciptado/rsa/Primos.java</file>
+            <file>file:/C:/Users/estudiantes/Documents/EncriptadoRSA-master/Enciptado%20RSA/src/enciptado/rsa/Mensaje.java</file>
+            <file>file:/C:/Users/estudiantes/Documents/EncriptadoRSA-master/Enciptado%20RSA/src/enciptado/rsa/EnciptadoRSA.java</file>
+            <file>file:/C:/Users/estudiantes/Documents/EncriptadoRSA-master/Enciptado%20RSA/src/enciptado/rsa/RSA.java</file>
+            <file>file:/C:/Users/estudiantes/Documents/EncriptadoRSA-master/Enciptado%20RSA/src/enciptado/rsa/Primos.java</file>
+            <file>file:/C:/Users/estudiantes/Documents/EncriptadoRSA-master/Enciptado%20RSA/src/enciptado/rsa/Vista.java</file>
         </group>
     </open-files>
 </project-private>

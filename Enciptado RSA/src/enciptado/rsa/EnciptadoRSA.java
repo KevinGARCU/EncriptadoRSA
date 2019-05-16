@@ -15,16 +15,11 @@ public class EnciptadoRSA {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Mensaje c= new Mensaje();
-        Primos p = new Primos();
-        RSA r  = new RSA(53, 31, 47, c.separarCaracteres("q"));
-        
-        p.veracidadPrimo(5);
+        new Vista();
+       /* p.veracidadPrimo(5);
         c.separarCaracteres("hola");
-        r.encontrarClave();
-        r.encontrarBits();
-        r.encontrarPotencias();
-        r.encriptar();
+        
+        r.encriptar();*/
         
         
       

@@ -12,11 +12,14 @@ public class RSA {
     int bits[],potenciaMod[];
     ArrayList<Integer> binario = new ArrayList<>();
 
-    public RSA(int p, int q, int n, int t) {
+    public void RSA1(int p, int q, int n, int t) {
         this.p = p;
         this.q = q;
         this.n = n;
         this.t = t;
+        encontrarClave();
+        encontrarBits();
+        encontrarPotencias();
     }
     
     
@@ -66,7 +69,8 @@ public class RSA {
     }
     
     public void encontrarPotencias(){
-        int aux=t;
+        int aux=0;
+        aux=t;
         potenciaMod = new int[bits.length];
         System.out.println(n);    
         potenciaMod[0]=t;
@@ -84,7 +88,7 @@ public class RSA {
         
     }
     
-    public void encriptar(){
+    public int encriptar(){
         int aux=1;
         for(int i=0; i<potenciaMod.length; i++){
             if(bits[i]==1){
@@ -93,6 +97,13 @@ public class RSA {
                 
             }
         }
-        System.out.println(aux);
+        return aux;
+    }
+    
+    public void borrar(){
+        for(int i=0; i<potenciaMod.length; i++){
+            potenciaMod[i]=0;
+        }
+        binario.clear();
     }
 }
