@@ -10,9 +10,8 @@ public class Mensaje {
     public ArrayList separarCaracteres(String mensaje){
         for(int i = 0; i < mensaje.length(); i++){           
             caracteres.add((int) mensaje.charAt(i));
-            System.out.println(caracteres.get(i));
-            
         }
+        System.out.println(caracteres);
         return caracteres;
     }
     

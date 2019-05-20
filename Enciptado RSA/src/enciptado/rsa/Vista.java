@@ -18,7 +18,7 @@ public class Vista extends JFrame implements ActionListener {
     JLabel titulo, p, q, n, palabra;
     JTextField campop, campon, campoq, campopalabra;
     JPanel p1;
-    JButton encriptar, desencriptar;
+    JButton encriptar;
     Mensaje c = new Mensaje();
     Primos pr = new Primos();
     RSA r = new RSA();
@@ -57,8 +57,6 @@ public class Vista extends JFrame implements ActionListener {
         encriptar.setBounds(140, 170, 100, 20);
         area = new JTextArea();
         area.setBounds(0,200,300,100);
-        area.setText("Encriptar con el método RSA \n");
-        area.append("(Rivest, Shamir y Adleman)\n");
         p1.setBackground(Color.white);
         p1.add(p);
         p1.add(campop);
@@ -84,7 +82,11 @@ public class Vista extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource().equals(encriptar)) {
+            area.setText("");
+            area.setText("Encriptar con el método RSA \n");
+            area.append("(Rivest, Shamir y Adleman)\n");
             String mensaje = campopalabra.getText();
+            System.out.println(mensaje);
             int q = Integer.parseInt(campoq.getText());
             int p = Integer.parseInt(campop.getText());
             int n = Integer.parseInt(campon.getText());
@@ -93,7 +95,7 @@ public class Vista extends JFrame implements ActionListener {
                 if ((pr.veracidadPrimo(p)) && pr.veracidadPrimo(q) && pr.veracidadPrimo(n)) {
                     r.RSA1(p, q, n, caracteres.get(i));
                     if(i==0){
-                        area.append("S= "+r.s+" (Clave Privada)\n");
+                        area.append("S= "+r.s+" (Clave Privada)     Z= "+r.z+"\n");
                     }
                     area.append(mensaje.charAt(i)+" = "+ r.encriptar()+"\n");
                     r.borrar();
@@ -117,13 +119,17 @@ public class Vista extends JFrame implements ActionListener {
                 }
             }
             
+            
             setVisible(false);
             setSize(400, 500);
+            area.setBounds(0,200,300,100+(50*mensaje.length()));    
             p1.add(area);
             area.setEditable(false);
             setVisible(true);
 
         }
+        caracteres.clear();
+        
     }
 
     private void escuchar() {

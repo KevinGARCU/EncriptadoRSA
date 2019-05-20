@@ -16,10 +16,6 @@ public class EnciptadoRSA {
      */
     public static void main(String[] args) {
         new Vista();
-       /* p.veracidadPrimo(5);
-        c.separarCaracteres("hola");
-        
-        r.encriptar();*/
         
         
       

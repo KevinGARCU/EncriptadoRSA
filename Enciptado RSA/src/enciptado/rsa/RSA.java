@@ -8,8 +8,10 @@ import java.util.ArrayList;
  */
 public class RSA {
 
-    int clavePrivada, fi, z, s, p, q, n, t;
-    int bits[],potenciaMod[];
+    int clavePrivada, fi, z, p, q, n, t;
+    long s;
+    int bits[];
+    long potenciaMod[];
     ArrayList<Integer> binario = new ArrayList<>();
 
     public void RSA1(int p, int q, int n, int t) {
@@ -27,19 +29,16 @@ public class RSA {
     public void encontrarClave() {
         fi = (p - 1) * (q - 1);
         z = p * q;
-        s = n + 1;
+        s = 2;
 
         while (true) {
             if ((n * s) % fi == 1) {
-           
                 break;
             } else {
                 s++;
                 
             }
         }
-        clavePrivada = s;
-        
     }
 
     public void encontrarBits() {
@@ -58,41 +57,27 @@ public class RSA {
 
         for (int i = 0; i < binario.size(); i++) {
             bits[i] = binario.get(i);
-            System.out.print(binario.get(i));
-        }
-        System.out.println("");
-        for(int i = 0; i<bits.length; i++){
-            System.out.print(bits[i]);
-        }
-        System.out.println("");
-        
+        }    
     }
     
     public void encontrarPotencias(){
-        int aux=0;
+        long aux=0;
         aux=t;
-        potenciaMod = new int[bits.length];
-        System.out.println(n);    
+        potenciaMod = new long[bits.length];   
         potenciaMod[0]=t;
         for(int i = 1; i<potenciaMod.length; i++){
-            potenciaMod[i]=(int)(Math.pow(aux, 2))%z;
+            potenciaMod[i]=(long)(Math.pow(aux, 2))%z;
             
             aux = potenciaMod[i];
-            System.out.println(aux);
             
-        }
-        for(int i = 0; i<potenciaMod.length; i++){
-            System.out.print(potenciaMod[i]+" ");
-        }
-        
+        }   
         
     }
     
-    public int encriptar(){
-        int aux=1;
+    public long encriptar(){
+        long  aux=1;
         for(int i=0; i<potenciaMod.length; i++){
             if(bits[i]==1){
-                System.out.println(aux);
                 aux = (aux*potenciaMod[i])%z;
                 
             }
